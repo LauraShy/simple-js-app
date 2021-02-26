@@ -15,3 +15,13 @@ let pokemonList = [
         types: ['flying', 'fire']
     }
 ];
+
+for (let i=0; i < pokemonList.length; i++){
+    if (pokemonList[i].height <1.3 && pokemonList[i].height >0.6){
+      document.write(pokemonList[i].name + ", " + pokemonList[i].height + " height, is a medium pokemon.");
+    } else if (pokemonList[i].height <0.7){
+      document.write(pokemonList[i].name + ", " + pokemonList[i].height + " height, is a small pokemon.");
+    } else {
+      document.write(pokemonList[i].name + ", " + pokemonList[i].height + " height, is a large pokemon. Wow! That\'s big!");
+    }
+  }
