@@ -5,8 +5,6 @@ let pokemonList = [
 ];
 
 let pokemonRepository = (function () {
-  let pokemonList = [];
-
   return {
     add: function(pokemon) {
       pokemonList.push(pokemon);
