@@ -4,8 +4,19 @@ let pokemonList = [
   { name: 'Charizard', height: '1.7', types: ['flying', 'fire'] }
 ];
 
+//this is the IIFE where you create the pokemonRepository
 let pokemonRepository = (function () {
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector('.pokemon-list');
+    let listpokemon = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('button-class');
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+  }
   return {
+    addListItem: addListItem,
     add: function(pokemon) {
       pokemonList.push(pokemon);
     },
@@ -18,14 +29,10 @@ let pokemonRepository = (function () {
 pokemonRepository.add({ name: 'Weepinbell', height: '1.0', types: ['grass', 'poison']});
 console.log(pokemonRepository.getAll());
 
-(function () {
-  pokemonList.forEach(function(pokemon) {
-    if (pokemon.height <1.3 && pokemon.height >0.6){
-      document.write(pokemon.name + ", " + pokemon.height + " height, is a medium pokemon." + "<br>");
-    } else if (pokemon.height <0.7){
-      document.write(pokemon.name + ", " + pokemon.height + " height, is a small pokemon." + "<br>");
-    } else {
-      document.write(pokemon.name + ", " + pokemon.height + " height, is a large pokemon. Wow! That\'s big!" + "<br>");
-    }
-  });
-})();
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
+});
+
+pokemonRepository.getAll().forEach(function(pokemon){
+  // add more code later
+});
