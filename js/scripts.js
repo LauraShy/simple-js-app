@@ -4,7 +4,6 @@ let pokemonList = [];
 let pokemonRepository = (function () {
   function addListItem(pokemon) {
     let pokemonList = document.querySelector('.pokemon-list');
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
     let listpokemon = document.createElement('li');
     let button = document.createElement('button');
     button.innerText = pokemon.name;
@@ -16,7 +15,12 @@ let pokemonRepository = (function () {
     pokemonList.appendChild(listpokemon);
   }
 
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
+
   function loadList() {
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
     return fetch(apiUrl).then(function (response) {
       return response.json();
     }).then(function (json) {
@@ -52,7 +56,7 @@ let pokemonRepository = (function () {
     });
   }
 
-  window.addEventListener('keydown', (e) => {
+  /*window.addEventListener('keydown', (e) => {
     let modalContainer = document.querySelector('#modal-container');
     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
       hideModal();  
@@ -66,8 +70,8 @@ let pokemonRepository = (function () {
     if (target === modalContainer) {
       hideModal();
     }
-  });
-
+  }); */
+  
   return {
     add: add,
     getAll: getAll,
@@ -75,16 +79,13 @@ let pokemonRepository = (function () {
   };
 })();
 
-pokemonRepository.add({ name: 'Weepinbell', height: '1.0', types: ['grass', 'poison']});
-console.log(pokemonRepository.getAll());
-
 pokemonRepository.loadList().then(function() {
   pokemonRepository.getAll().forEach(function(pokemon){
     pokemonRepository.addListItem(pokemon);
   });
 });
 
-function showModal(title, text) {
+/*function showModal(title, text) {
   let modalContainer = document.querySelector('#modal-container');
   
   // Clear all existing modal content
@@ -111,7 +112,7 @@ function showModal(title, text) {
   modalContainer.appendChild(modal);
   
   modalContainer.classList.add('is-visible');
-}
+} 
 
 document.querySelector('#show-modal').addEventListener('click', () => {
   showModal('Modal title', 'This is the modal content!');
@@ -121,3 +122,4 @@ function hideModal() {
   let modalContainer = document.querySelector('#modal-container');
   modalContainer.classList.remove('is-visible');
 }
+*/
