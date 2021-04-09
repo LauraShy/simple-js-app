@@ -52,7 +52,7 @@ let pokemonRepository = (function () {
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
       console.log(pokemon);
-      showModal(pokemon.name, "Pokemon Height: " + pokemon.height)
+      showModal(pokemon)
     });
   }
   
