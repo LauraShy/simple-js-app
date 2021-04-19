@@ -5,9 +5,12 @@ let pokemonRepository = (function () {
   function addListItem(pokemon) {
     let pokemonList = document.querySelector('.pokemon-list');
     let listpokemon = document.createElement('li');
+    listpokemon.classList.add('list-group-item');
+    listpokemon.classList.add('list-group-item-action');
     let button = document.createElement('button');
     button.innerText = pokemon.name;
-    button.classList.add('button-class');
+    button.classList.add('btn');
+    button.classList.add('btn-block');
     button.addEventListener('click', function () {
       showDetails(pokemon)
     });
@@ -51,8 +54,11 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      console.log(pokemon);
-      showModal(pokemon)
+      showModal(pokemon);
+/*    Trying to figure out how to make the modal appear again after adding in the new Bootstrap modal
+      let modalBody = $('.modal-body');
+      let modalTitle = $('.modal-title');
+      let modalHeader = $('.modal-header');*/
     });
   }
   
@@ -71,7 +77,7 @@ let pokemonRepository = (function () {
     closeButtonElement.innerText = 'Close';
     closeButtonElement.addEventListener('click', hideModal);
   
-    let titleElement = document.createElement('h1');
+    let titleElement = document.createElement('h5').addClass('modal-title');
     titleElement.innerText = pokemon.name;
   
     let contentElement = document.createElement('p');
