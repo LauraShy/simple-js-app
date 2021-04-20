@@ -55,14 +55,11 @@ let pokemonRepository = (function () {
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
       showModal(pokemon);
-/*    Trying to figure out how to make the modal appear again after adding in the new Bootstrap modal
-      let modalBody = $('.modal-body');
-      let modalTitle = $('.modal-title');
-      let modalHeader = $('.modal-header');*/
+      
     });
   }
   
-  function showModal(pokemon) {
+  /*function showModal(pokemon) {
     let modalContainer = document.querySelector('#modal-container');
     
     // Clear all existing modal content
@@ -110,7 +107,7 @@ let pokemonRepository = (function () {
         hideModal();
       }
     }); 
-  } 
+  } */
   
   function hideModal() {
     let modalContainer = document.querySelector('#modal-container');
