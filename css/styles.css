@@ -30,7 +30,7 @@ ul.pokemon-list {
   display: grid;
   text-align: center;
   background-color: rgb(119, 136, 153);
-  text-transform: uppercase;
+  text-transform: uppercase; /* noticed this is not working properly for the pokemon list */
   margin-left: auto;
   margin-right: auto;
   width: 75%;
