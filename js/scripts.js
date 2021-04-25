@@ -2,23 +2,28 @@ let pokemonList = [];
 //this is the IIFE where you create the pokemonRepository
 let pokemonRepository = (function () {
   function addListItem(pokemon) {
-    let pokemonList = document.querySelector('.pokemon-list');
+    let pokemonList = $('.pokemon-list');
+
+    //tried changing to $.create() but error occured
     let listpokemon = document.createElement('li');
-    listpokemon.classList.add('list-group-item');
-    listpokemon.classList.add('list-group-item-action');
+
+    $(listpokemon).addClass('list-group-item');
+    $(listpokemon).addClass('list-group-item-action');
     let button = document.createElement('button');
     button.innerText = pokemon.name;
     button.classList.add('btn');
     button.classList.add('btn-block');
-    // ==============================================
+
+    // tried changing this to .attr() but error occured
     button.setAttribute('data-toggle', 'modal');
     button.setAttribute('data-target', '#modal-container');
-    // ==============================================
+
+    // tried changing this to button.on() but error occured
     button.addEventListener('click', function () {
       showDetails(pokemon);
     });
-    listpokemon.appendChild(button);
-    pokemonList.appendChild(listpokemon);
+    listpokemon.append(button);
+    pokemonList.append(listpokemon);
   }
   function add(pokemon) {
     pokemonList.push(pokemon);
@@ -30,9 +35,10 @@ let pokemonRepository = (function () {
       $('#pokemon-name').html($nameElement);
       // Render pokemon image
       $('#pokemon-image').attr('src', pokemon.imageUrl);
+      // Render pokemon height
       var $heightElement = $('<p> Pokemon Height: ' + pokemon.height + '</p>');
       $('#pokemon-height').html($heightElement);
-      // Render types using array
+      // Render pokemon types using array
       var $typeElement = $('<p> Pokemon Type: ' + pokemon.types + '</p>');
       $('#pokemon-type').html($typeElement);
     });
