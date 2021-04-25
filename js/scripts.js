@@ -28,11 +28,11 @@ let pokemonRepository = (function () {
       console.log(pokemon);
       var $nameElement = $('<h5>' + pokemon.name + '</h5>');
       $('#pokemon-name').html($nameElement);
-      // It is appearing, but I know this needs to be fixed. Changing the img next to Pokedex as well
-      $('img').attr("src", pokemon.imageUrl);
+      // Render pokemon image
+      $('#pokemon-image').attr('src', pokemon.imageUrl);
       var $heightElement = $('<p> Pokemon Height: ' + pokemon.height + '</p>');
       $('#pokemon-height').html($heightElement);
-      // types are not apprearing. Only as [object object]
+      // Render types using array
       var $typeElement = $('<p> Pokemon Type: ' + pokemon.types + '</p>');
       $('#pokemon-type').html($typeElement);
     });
@@ -66,7 +66,9 @@ let pokemonRepository = (function () {
         // Now we add the details to the item
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
-        item.types = details.types;
+        item.types = details.types.map(function (pokemon) {
+          return pokemon.type.name;
+        });
       })
       .catch(function (e) {
         console.error(e);
