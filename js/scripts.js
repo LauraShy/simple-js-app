@@ -83,52 +83,6 @@ let pokemonRepository = (function () {
         console.error(e);
       });
   }
-
-  /*function showModal(pokemon) {
-    let modalContainer = document.querySelector('#modal-container');
-    // Clear all existing modal content
-    modalContainer.innerHTML = '';
-    let modal = document.createElement('div');
-    modal.classList.add('modal');
-    // Add the new modal content
-    let closeButtonElement = document.createElement('button');
-    closeButtonElement.classList.add('modal-close');
-    closeButtonElement.innerText = 'Close';
-    closeButtonElement.addEventListener('click', hideModal);
-    let titleElement = document.createElement('h5').addClass('modal-title');
-    titleElement.innerText = pokemon.name;
-    let contentElement = document.createElement('p');
-    contentElement.innerText = 'Pokemon Height: ' + pokemon.height;
-    let pokemonImg = document.createElement("img");
-    pokemonImg.classList.add('pokemon-img');
-    pokemonImg.src = pokemon.imageUrl;
-    modal.appendChild(closeButtonElement);
-    modal.appendChild(titleElement);
-    modal.appendChild(contentElement);
-    modal.appendChild(pokemonImg);
-    modalContainer.appendChild(modal);
-    modalContainer.classList.add('is-visible');
-    window.addEventListener('keydown', (e) => {
-      let modalContainer = document.querySelector('#modal-container');
-      if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-        hideModal();  
-      }
-    });
-    modalContainer.addEventListener('click', (e) => {
-      // Since this is also triggered when clicking INSIDE the modal
-      // We only want to close if the user clicks directly on the overlay
-      let target = e.target;
-      if (target === modalContainer) {
-        hideModal();
-      }
-    }); 
-  } */
-  // function hideModal() {
-  //   let modalContainer = document.querySelector('#modal-container');
-  //   modalContainer.innerHTML = '';
-  //   modalContainer.classList.remove('is-visible');
-  // }
-
   return {
     add: add,
     getAll: function () {
