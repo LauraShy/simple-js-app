@@ -3,30 +3,33 @@ let pokemonList = [];
 let pokemonRepository = (function () {
   function addListItem(pokemon) {
     let pokemonList = $('.pokemon-list');
+    let listpokemon = $(
+      '<li class="list-group-item list-group-item-action"></li>'
+    );
+    let button = $(
+      '<button type="button" class="btn btn-block " data-toggle="modal" data-target="#modal-container">' +
+        pokemon.name +
+        '</button>'
+    );
+    // button.classList.add('btn');
+    // button.classList.add('btn-block');
+    // button.innerText = pokemon.name;
 
-    //tried changing to $.create() but error occured
-    let listpokemon = document.createElement('li');
+    // button.setAttribute('data-toggle', 'modal');
+    // button.setAttribute('data-target', '#modal-container');
 
-    $(listpokemon).addClass('list-group-item');
-    $(listpokemon).addClass('list-group-item-action');
-    let button = document.createElement('button');
-    button.innerText = pokemon.name;
-    button.classList.add('btn');
-    button.classList.add('btn-block');
-
-    // tried changing this to .attr() but error occured
-    button.setAttribute('data-toggle', 'modal');
-    button.setAttribute('data-target', '#modal-container');
-
-    // tried changing this to button.on() but error occured
-    button.addEventListener('click', function () {
-      showDetails(pokemon);
-    });
     listpokemon.append(button);
     pokemonList.append(listpokemon);
+    clickPokemonButtonHandler(button, pokemon);
   }
   function add(pokemon) {
     pokemonList.push(pokemon);
+  }
+  function clickPokemonButtonHandler(button, pokemonObject) {
+    button.on('click', function (event) {
+      // TODO: clear out old modal data
+      showDetails(pokemonObject);
+    });
   }
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
