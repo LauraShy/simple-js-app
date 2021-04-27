@@ -40,6 +40,10 @@ ul.pokemon-list {
   margin: auto;
 }
 
+.btn-block {
+  text-transform: uppercase;
+}
+
 body {
   font-family: 'New Tegomin', serif;;
   text-transform:uppercase;
