@@ -11,24 +11,30 @@ ul.pokemon-list {
 }
 
 /* Would like to animate the image added, having trouble remembering how to call it correctly */
-/* img.gotta-catch-em-all {
-  animation: moveHorizontal 2s ease infinite alternate;
-    animation-duration: 2s;
-    animation-timing-function: ease;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-fill-mode: none;
-    animation-play-state: running;
-    animation-name: moveHorizontal;
+/*img.gotta-catch-em-all {
+  transition: all 5s ease;
+  animation: imgAnimation 15s infinite;
+}
+
+@keyframes imgAnimation {
+  0% {
+    transform: 0;
+  }
+  50% {
+    transform: 720px;
+  }
+  100% {
+    transform: 0;
+  }
 } */
+
 
 .button-class {
   padding: 12px 40px;
   border-radius: 12px;
   width: 50%;
   font-family: 'New Tegomin', serif;;
-  text-transform:uppercase;
+  text-transform: uppercase;
   font-size: medium;
   font-weight: bold;
   margin: auto;
