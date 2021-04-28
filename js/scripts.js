@@ -11,13 +11,6 @@ let pokemonRepository = (function () {
         pokemon.name +
         '</button>'
     );
-    // button.classList.add('btn');
-    // button.classList.add('btn-block');
-    // button.innerText = pokemon.name;
-
-    // button.setAttribute('data-toggle', 'modal');
-    // button.setAttribute('data-target', '#modal-container');
-
     listpokemon.append(button);
     pokemonList.append(listpokemon);
     clickPokemonButtonHandler(button, pokemon);

@@ -11,23 +11,27 @@ ul.pokemon-list {
 }
 
 /* Would like to animate the image added, having trouble remembering how to call it correctly */
-/*img.gotta-catch-em-all {
-  transition: all 5s ease;
-  animation: imgAnimation 15s infinite;
+img.gotta-catch-em-all {
+  animation: imgAnimation 15s infinite alternate slidein;
 }
 
 @keyframes imgAnimation {
-  0% {
-    transform: 0;
+  from {
+    margin-left:75%;
   }
-  50% {
-    transform: 720px;
+  to {
+    margin-left:25%;
   }
-  100% {
-    transform: 0;
-  }
-} */
+} 
 
+.modal-body {
+  text-align: center;
+}
+
+.h5, h5 {
+  font-size: larger;
+  font-weight: bold;
+}
 
 .button-class {
   padding: 12px 40px;
@@ -42,6 +46,7 @@ ul.pokemon-list {
 
 .btn-block {
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 body {
