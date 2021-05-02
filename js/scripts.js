@@ -66,7 +66,7 @@ let pokemonRepository = (function () {
       })
       .then(function (details) {
         // Now we add the details to the item
-        item.imageUrl = details.sprites.front_default;
+        item.imageUrl = details.sprites.other.dream_world.front_default;
         item.height = details.height;
         item.types = details.types.map(function (pokemon) {
           return pokemon.type.name;
