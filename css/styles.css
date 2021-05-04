@@ -12,6 +12,7 @@ ul.pokemon-list {
 
 /* Would like to animate the image added, having trouble remembering how to call it correctly */
 img.gotta-catch-em-all {
+  max-width: 100%;
   animation: imgAnimation 15s infinite alternate slidein;
 }
 
