@@ -13,10 +13,10 @@ ul.pokemon-list {
 /* Would like to animate the image added, having trouble remembering how to call it correctly */
 img.gotta-catch-em-all {
   max-width: 100%;
-  animation: imgAnimation 15s infinite alternate slidein;
+  animation: imgMove 15s infinite alternate slidein;
 }
 
-@keyframes imgAnimation {
+@keyframes imgMove {
   from {
     margin-left:75%;
   }
@@ -57,6 +57,11 @@ body {
 
 p {
   font-weight: bold;
+}
+
+.form-inline .btn {
+  border:white;
+  background: gray;
 }
 
 /* Extra small devices (phones, 600px and down) */
