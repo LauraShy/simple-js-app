@@ -14,13 +14,13 @@ ul.pokemon-list {
 
 @keyframes slideIn {
   0% {
-    left: 250px;
+    left: 25%;
   }
   50% {
-    left: 1000px;
+    left: 75%;
   }
   100% {
-    left: 250px;
+    left: 25%;
   }
 }
 
@@ -32,10 +32,9 @@ ul.pokemon-list {
 #pokemon-animation img {
   position: relative;
   animation-direction: alternate;
-  animation-iteration-count: infinite;
   left: 750px;
   height: 230px;
-  animation: slideIn 12s;
+  animation: infinite slideIn 12s;
   animation-fill-mode: both;
 }
 
