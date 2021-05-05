@@ -91,6 +91,15 @@ pokemonRepository.loadList().then(function () {
   });
 });
 
+$(document).ready(function () {
+  $('#pokemon-search').on('keyup', function () {
+    var value = $(this).val().toLowerCase();
+    $('.pokemon-list *').filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+  });
+});
+
 // prettier.config.js or .prettierrc.js
 module.exports = {
   trailingComma: "es5",
