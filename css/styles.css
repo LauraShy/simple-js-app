@@ -11,19 +11,33 @@ ul.pokemon-list {
 }
 
 /* Would like to animate the image added, having trouble remembering how to call it correctly */
-img.gotta-catch-em-all {
-  max-width: 100%;
-  animation: imgMove 15s infinite alternate slidein;
+
+@keyframes slideIn {
+  0% {
+    left: 250px;
+  }
+  50% {
+    left: 1000px;
+  }
+  100% {
+    left: 250px;
+  }
 }
 
-@keyframes imgMove {
-  from {
-    margin-left:75%;
-  }
-  to {
-    margin-left:25%;
-  }
-} 
+#pokemon-animation {
+  position: relative;
+  height: 230px;
+}
+
+#pokemon-animation img {
+  position: relative;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  left: 750px;
+  height: 230px;
+  animation: slideIn 12s;
+  animation-fill-mode: both;
+}
 
 .modal-body {
   text-align: center;
@@ -62,6 +76,12 @@ p {
 .form-inline .btn {
   border:white;
   background: gray;
+}
+
+.form-inline {
+  display: inline;
+  position: relative;
+  float: right;
 }
 
 /* Extra small devices (phones, 600px and down) */
