@@ -3,14 +3,12 @@ ul.pokemon-list {
   display: grid;
   text-align: center;
   background-color: rgb(119, 136, 153);
-  text-transform: uppercase; /* noticed this is not working properly for the pokemon list */
+  text-transform: uppercase;
   margin-left: auto;
   margin-right: auto;
   width: 75%;
   padding: 20px;
 }
-
-/* Would like to animate the image added, having trouble remembering how to call it correctly */
 
 @keyframes slideIn {
   0% {

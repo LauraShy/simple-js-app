@@ -12,5 +12,15 @@ A JavaScript app built with HTML, CSS, and JavaScript, which uses an external AP
 * On user click, view details in the modal for that Pokémon
 * Search by Pokémon name
 
+## Built Using
+
+- [PokéAPI](https://github.com/PokeAPI/pokeapi)
+- [jQuery](https://jquery.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Prettier](https://prettier.io/)
+- [ESLint](https://eslint.org/)
+
+
 API Link: https://pokeapi.co/api/v2/pokemon/?limit=150
 Project Link: https://laurashy.github.io/simple-js-app/
