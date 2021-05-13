@@ -22,6 +22,7 @@ ul.pokemon-list {
   }
 }
 
+
 #pokemon-animation {
   position: relative;
   height: 230px;
@@ -34,14 +35,6 @@ ul.pokemon-list {
   height: 230px;
   animation: infinite slideIn 12s;
   animation-fill-mode: both;
-}
-
-/*Have tried the below several different ways with calling the text/trying to change it's appearance. 
-When I had placed the text in a heading, it was white but was below the image */
-.navbar-text {
-  position: relative;
-  color: white;
-  width: 50%;
 }
 
 .modal-body {
