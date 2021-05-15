@@ -26,10 +26,13 @@ ul.pokemon-list {
 #pokemon-animation {
   position: relative;
   height: 230px;
+  display: block;
+  overflow: hidden;
 }
 
 #pokemon-animation img {
   position: relative;
+  overflow: hidden;
   animation-direction: alternate;
   left: 750px;
   height: 230px;
@@ -96,3 +99,26 @@ No media query since this is the default in Bootstrap */
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {}
+
+@media only screen and (max-width: 600px) {
+  .navbar-brand {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+  .navbar-brand .navbar-text {
+    display: block;
+  }
+  .form-inline .btn {
+    display: block;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #pokemon-animation {
+    text-align: center;
+    display: block;
+    padding-right: 50%;
+    animation-duration: 6s;
+  }
+}
