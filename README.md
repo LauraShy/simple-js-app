@@ -1,6 +1,8 @@
 ## Pokédex App
 A JavaScript app built with HTML, CSS, and JavaScript, which uses an external API.
 
+<img height="300" src="https://laurashy.github.io/portfolio-website/img/pokedex.gif">
+
 ## User Goals
 * Users should be able to view a list of Pokémon and see more details for a given Pokémon on demand.
 * Users should be able to see the appearance of the Pokémon, as well as learn about their height and types.
